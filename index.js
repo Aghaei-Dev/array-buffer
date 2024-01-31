@@ -1,6 +1,11 @@
-const array = new ArrayBuffer(2)
-const view = new Int16Array(array)
-view[0] = 29128
-view[1] = 22
+const buffer = new ArrayBuffer(16)
 
-console.log(view)
+const view = new Uint32Array(buffer)
+
+console.log(view.BYTES_PER_ELEMENT)
+
+view[0] = 4294967295
+
+view[0] = 4294967296
+
+console.log(view[1], view[2], view[3])
